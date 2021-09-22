@@ -1,5 +1,5 @@
 const searchInput = document.getElementById('searchInput');
-const suggestionsList = document.getElementById('suggestions');
+const suggestionsList = document.getElementById('suggestionsList');
 let suggestions = undefined;
 
 searchInput.addEventListener('keyup', getSuggestions);
@@ -14,17 +14,29 @@ function getSuggestions() {
 			.then((data) => data.json())
 			.then((data) => {
 				suggestions = data;
-				showSuggestions();
+				showSuggestionsList();
 			});
+	} else {
+		hideSuggestionsList();
 	}
 }
 
-function showSuggestions() {
-	for (let i = 0; i < 5; i++) {
-		let item = suggestions[i];
+function showSuggestionsList() {
+	if (suggestions.length > 0) {
+		suggestionsList.style.display = 'block';
 
-		if (item) {
-			suggestionsList.innerHTML += `<li>${item.title}</li>`;
+		for (let i = 0; i < 5; i++) {
+			let item = suggestions[i];
+
+			if (item) {
+				suggestionsList.innerHTML += `<li>${item.title}</li>`;
+			}
 		}
+	} else {
+		hideSuggestionsList();
 	}
+}
+
+function hideSuggestionsList() {
+	suggestionsList.style.display = 'none';
 }

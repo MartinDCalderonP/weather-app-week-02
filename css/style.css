@@ -12,8 +12,19 @@ header {
 	justify-content: center;
 }
 
-.search-input {
-	margin: 20px 0px;
+.form {
+	margin: 20px;
+	display: flex;
+	align-items: flex-start;
+}
+
+.form__input-div__suggestions-list {
+	display: none;
+	list-style-type: none;
+	margin-bottom: 20px;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
 }
 
 main {
@@ -30,7 +41,7 @@ main {
 	align-items: center;
 }
 
-.card {
+.card-container__card {
 	width: 18%;
 	height: 100%;
 	border: 1px solid darkblue;
@@ -42,10 +53,10 @@ main {
 	align-items: center;
 }
 
-.card > * {
+.card-container__card > * {
 	margin: 10px 0px;
 }
 
-.card__weather-icon {
+.card-container__card__weather-icon {
 	width: 50%;
 }
