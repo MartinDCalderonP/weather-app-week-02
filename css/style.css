@@ -7,7 +7,7 @@
 	background-color: #f9f9f9;
 }
 
-.header {
+header {
 	display: flex;
 	justify-content: center;
 }
@@ -46,6 +46,6 @@ main {
 	margin: 10px 0px;
 }
 
-.weather-icon {
+.card__weather-icon {
 	width: 50%;
 }
