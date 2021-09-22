@@ -16,17 +16,17 @@ function getWeatherData() {
 }
 
 function updater() {
-	updatePageTitle();
-	updateCard();
+	showTitle();
+	showCards();
 }
 
-function updatePageTitle() {
+function showTitle() {
 	let title = document.getElementById('title');
 
 	title.innerHTML += `5 Day Weather - ${weatherData.title}`;
 }
 
-function updateCard() {
+function showCards() {
 	let cardContainer = document.getElementById('card-container');
 
 	for (let i = 0; i < weatherData.consolidated_weather.length - 1; i++) {
