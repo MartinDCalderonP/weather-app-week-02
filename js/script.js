@@ -16,11 +16,11 @@ function getWeatherData() {
 }
 
 function updater() {
-	updateTitle();
+	updatePageTitle();
 	updateCard();
 }
 
-function updateTitle() {
+function updatePageTitle() {
 	let title = document.getElementById('title');
 
 	if (weatherData !== undefined) {
