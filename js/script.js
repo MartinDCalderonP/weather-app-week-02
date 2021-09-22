@@ -18,18 +18,18 @@ function getWeatherData() {
 }
 
 function updater() {
-	showTitle();
+	showMainTitle();
 	showCards();
 }
 
-function showTitle() {
-	let title = document.getElementById('title');
+function showMainTitle() {
+	const mainTitle = document.getElementById('mainTitle');
 
-	title.innerHTML += `5 Day Weather - ${weatherData.title}`;
+	mainTitle.innerHTML += `5 Day Weather - ${weatherData.title}`;
 }
 
 function showCards() {
-	let cardContainer = document.getElementById('card-container');
+	const cardContainer = document.getElementById('card-container');
 
 	for (let i = 0; i < weatherData.consolidated_weather.length - 1; i++) {
 		let item = weatherData.consolidated_weather[i];
