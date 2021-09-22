@@ -33,14 +33,13 @@ function updateCard() {
 
 	for (let i = 0; i < weatherData.consolidated_weather.length - 1; i++) {
 		let item = weatherData.consolidated_weather[i];
+		let imageUrl = `https://www.metaweather.com/static/img/weather/${item.weather_state_abbr}.svg`;
 
 		cardContainer.innerHTML += `<div class="card">
 										<h2>${getDayName(item.applicable_date)}</h2>
 										<img
 											class="weather-icon"
-											src="https://www.metaweather.com/static/img/weather/${
-												item.weather_state_abbr
-											}.svg"
+											src="${imageUrl}"
 											alt="${item.weather_state_name}"
 										/>
 										<h3>${Math.round(item.the_temp)}°C</h3>
