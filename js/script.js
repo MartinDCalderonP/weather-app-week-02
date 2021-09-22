@@ -1,5 +1,7 @@
 'use strict';
 
+import './suggestions.js';
+
 let weatherData = undefined;
 
 getWeatherData();
