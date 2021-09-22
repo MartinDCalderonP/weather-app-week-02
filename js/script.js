@@ -23,9 +23,7 @@ function updater() {
 function updatePageTitle() {
 	let title = document.getElementById('title');
 
-	if (weatherData !== undefined) {
-		title.innerHTML += `5 Day Weather - ${weatherData.title}`;
-	}
+	title.innerHTML += `5 Day Weather - ${weatherData.title}`;
 }
 
 function updateCard() {
@@ -38,7 +36,7 @@ function updateCard() {
 		cardContainer.innerHTML += `<div class="card">
 										<h2>${getDayName(item.applicable_date)}</h2>
 										<img
-											class="weather-icon"
+											class="card__weather-icon"
 											src="${imageUrl}"
 											alt="${item.weather_state_name}"
 										/>
