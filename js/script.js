@@ -46,10 +46,14 @@ function showCards() {
 											src="${imageUrl}"
 											alt="${item.weather_state_name}"
 										/>
-										<h3>${Math.round(item.the_temp)}°C</h3>
-										<p>${item.weather_state_name}</p>
-										<p>Min: ${Math.round(item.min_temp)}°C</p>
-										<p>Max: ${Math.round(item.max_temp)}°C</p>
-									</div>`;
+										<div>
+											<h3>${Math.round(item.the_temp)}°C</h3>
+											<p>${item.weather_state_name}</p>
+										</div>
+										<div>
+											<p>Min: ${Math.round(item.min_temp)}°C</p>
+											<p>Max: ${Math.round(item.max_temp)}°C</p>
+										</div>
+									</%div>`;
 	}
 }
