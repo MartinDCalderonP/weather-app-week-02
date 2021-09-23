@@ -1,3 +1,5 @@
+import { debounce } from './helpers.js';
+
 const searchInput = document.getElementById('searchInput');
 const suggestionsList = document.getElementById('suggestionsList');
 let suggestions;
@@ -5,12 +7,6 @@ let suggestions;
 searchInput.addEventListener('keyup', () => {
 	debounce(getSuggestions, 500);
 });
-
-function debounce(func, time) {
-	let timer;
-	clearTimeout(timer);
-	timer = setTimeout(func, time);
-}
 
 function getSuggestions() {
 	let queryUrl = `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=`;

@@ -1,6 +1,7 @@
 'use strict';
 
 import './suggestions.js';
+import { getDayName } from './helpers.js';
 
 let weatherData;
 
@@ -51,12 +52,4 @@ function showCards() {
 										<p>Max: ${Math.round(item.max_temp)}°C</p>
 									</div>`;
 	}
-}
-
-function getDayName(date) {
-	let numberDate = new Date(date);
-
-	const options = { weekday: 'long' };
-
-	return numberDate.toLocaleDateString('en-us', options);
 }
