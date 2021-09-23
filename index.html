@@ -5,20 +5,31 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Weather App</title>
+		<link
+			rel="stylesheet"
+			href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+			integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+			crossorigin="anonymous"
+		/>
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
 		<header>
 			<form id="form" class="form" autocomplete="off">
 				<div class="form__input-div">
-					<input
-						type="text"
-						id="searchInput"
-						class="form__input-div__search-input"
-						name="search"
-						placeholder="Search"
-					/>
-					<ul id="suggestionsList" class="form__input-div__suggestions-list"></ul>
+					<div class="form__input-div__search-input">
+						<input
+							type="text"
+							id="searchInput"
+							name="search"
+							placeholder="Search"
+						/>
+						<i class="fas fa-search"></i>
+					</div>
+					<ul
+						id="suggestionsList"
+						class="form__input-div__suggestions-list"
+					></ul>
 				</div>
 				<button id="searchButton" class="form__search-button">Search</button>
 			</form>
