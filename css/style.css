@@ -24,7 +24,7 @@ header {
 	background-color: #ffffff;
 	border: 1px solid #00aae4;
 	height: 30px;
-	padding: 10px 20px;
+	padding: 10px 0px 10px 20px;
 	border-radius: 999px;
 	width: 75vw;
 	margin: 0 auto;
@@ -52,8 +52,9 @@ header {
 	cursor: pointer;
 	background-color: transparent;
 	color: #00aae4;
-	border: none;
-	padding: 15px 20px;
+	border-top-right-radius: 999px;
+	border-bottom-right-radius: 999px;
+	padding: 15px 30px;
 }
 
 .form__input-div__search-button > i {
