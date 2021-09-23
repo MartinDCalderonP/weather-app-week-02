@@ -4,8 +4,8 @@ import './suggestions.js';
 import './search.js';
 import { getWeatherData, getDayName } from './helpers.js';
 
-const mainTitle = document.getElementById('mainTitle');
-const cardContainer = document.getElementById('cardContainer');
+export const mainTitle = document.getElementById('mainTitle');
+export const cardContainer = document.getElementById('cardContainer');
 
 getWeatherData();
 
