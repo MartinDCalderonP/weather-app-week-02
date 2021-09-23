@@ -4,9 +4,7 @@ const searchInput = document.getElementById('searchInput');
 const suggestionsList = document.getElementById('suggestionsList');
 let suggestions;
 
-searchInput.addEventListener('keyup', () => {
-	debounce(getSuggestions, 500);
-});
+searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
 
 function getSuggestions() {
 	let queryUrl = `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=`;

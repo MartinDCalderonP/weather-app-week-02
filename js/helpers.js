@@ -6,10 +6,16 @@ export function getDayName(date) {
 	return numberDate.toLocaleDateString('en-us', options);
 }
 
-export function debounce(func, time) {
-	let timer;
+export function debounce(fn, delay) {
+	let timeoutID;
 
-	clearTimeout(timer);
+	return function (...args) {
+		if (timeoutID) {
+			clearTimeout(timeoutID);
+		}
 
-	timer = setTimeout(func, time);
+		timeoutID = setTimeout(() => {
+			fn(...args);
+		}, delay);
+	};
 }
