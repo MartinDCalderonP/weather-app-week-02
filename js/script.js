@@ -2,7 +2,7 @@
 
 import './suggestions.js';
 
-let weatherData = undefined;
+let weatherData;
 
 getWeatherData();
 
