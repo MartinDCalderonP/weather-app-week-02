@@ -5,8 +5,6 @@ let suggestions = undefined;
 searchInput.addEventListener('keyup', getSuggestions);
 
 function getSuggestions() {
-	suggestionsList.innerHTML = '';
-
 	let queryUrl = `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=`;
 
 	if (searchInput.value.length > 0) {
@@ -15,6 +13,9 @@ function getSuggestions() {
 			.then((data) => {
 				suggestions = data;
 				showSuggestionsList();
+			})
+			.catch((err) => {
+				console.log(err);
 			});
 	} else {
 		hideSuggestionsList();
@@ -23,6 +24,7 @@ function getSuggestions() {
 
 function showSuggestionsList() {
 	if (suggestions.length > 0) {
+		suggestionsList.innerHTML = '';
 		suggestionsList.style.display = 'block';
 
 		for (let i = 0; i < 5; i++) {

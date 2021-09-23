@@ -14,6 +14,9 @@ function getWeatherData() {
 		.then((data) => {
 			weatherData = data;
 			updater();
+		})
+		.catch((err) => {
+			console.log(err);
 		});
 }
 
