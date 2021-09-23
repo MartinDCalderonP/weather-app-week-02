@@ -22,7 +22,7 @@ header {
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
-	border: 1px solid #dfe1e5;
+	border: 1px solid #00aae4;
 	height: 30px;
 	padding: 10px 20px;
 	border-radius: 999px;
@@ -33,7 +33,7 @@ header {
 
 .form__input-div__search-input:hover {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-	border-color: rgba(223, 225, 229, 0);
+	border-color: darkblue;
 }
 
 .form__input-div__search-input > input {
@@ -47,7 +47,7 @@ header {
 .form__input-div__search-input > i {
 	margin-left: 5px;
 	background-color: transparent;
-	color: gray;
+	color: darkblue;
 }
 
 .form__input-div__suggestions-list {
@@ -86,7 +86,7 @@ main {
 	height: 100%;
 	background-color: #f9f9f9;
 	color: darkblue;
-	border: 1px solid darkblue;
+	border: 1px solid #00aae4;
 	border-radius: 5px;
 	padding: 5px 10px;
 	box-sizing: border-box;
@@ -99,7 +99,8 @@ main {
 }
 
 .card-container__card:hover {
-	box-shadow: 0 8px 16px rgba(0, 0, 0, .5);
+	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
+	border-color: darkblue;
 }
 
 .card-container__card > * {
