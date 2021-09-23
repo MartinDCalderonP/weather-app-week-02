@@ -52,6 +52,7 @@ header {
 	cursor: pointer;
 	background-color: transparent;
 	color: #00aae4;
+	border: none;
 	border-top-right-radius: 999px;
 	border-bottom-right-radius: 999px;
 	padding: 15px 30px;
