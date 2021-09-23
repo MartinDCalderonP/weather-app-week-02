@@ -36,6 +36,10 @@ header {
 	border-color: darkblue;
 }
 
+.form__input-div__search-input:hover i {
+	color: darkblue;
+}
+
 .form__input-div__search-input > input {
 	flex: 1;
 	padding: 10px 20px;
@@ -44,10 +48,17 @@ header {
 	background-color: transparent;
 }
 
-.form__input-div__search-input > i {
-	margin-left: 5px;
+.form__input-div__search-button {
+	cursor: pointer;
 	background-color: transparent;
-	color: darkblue;
+	color: #00aae4;
+	border: none;
+	padding: 15px 20px;
+}
+
+.form__input-div__search-button > i {
+	background-color: transparent;
+	transition: all 0.25s linear;
 }
 
 .form__input-div__suggestions-list {
@@ -57,10 +68,6 @@ header {
 	border: 1px solid black;
 	border-radius: 5px;
 	padding: 5px;
-}
-
-.form__search-button {
-	display: none;
 }
 
 main {
