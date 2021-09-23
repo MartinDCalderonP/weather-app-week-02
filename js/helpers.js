@@ -1,4 +1,4 @@
-import { showWeatherData } from './script.js';
+import { showWeatherData } from "./script.js";
 
 const allOriginsAPIUrl = `https://api.allorigins.win/raw?url=`;
 const metaWeatherAPIUrl = `https://www.metaweather.com/api/location/`;
