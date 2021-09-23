@@ -1,5 +1,4 @@
-import { getWeatherData } from './script.js';
-import { throttle } from './helpers.js';
+import { getWeatherData, throttle } from './helpers.js';
 
 const searchInput = document.getElementById('searchInput');
 const searchButton = document.getElementById('searchButton');

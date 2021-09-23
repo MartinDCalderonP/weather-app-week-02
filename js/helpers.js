@@ -1,3 +1,20 @@
+import { showWeatherData } from './script.js';
+
+const allOriginsAPIUrl = `https://api.allorigins.win/raw?url=`;
+const metaWeatherAPIUrl = `https://www.metaweather.com/api/location/`;
+const defaultId = `2487956`;
+
+export function getWeatherData(receivedId) {
+	let locationId = receivedId || defaultId;
+
+	fetch(allOriginsAPIUrl + metaWeatherAPIUrl + locationId)
+		.then((data) => data.json())
+		.then(showWeatherData)
+		.catch((err) => {
+			console.log(err);
+		});
+}
+
 export function getDayName(date) {
 	let numberDate = new Date(date);
 
