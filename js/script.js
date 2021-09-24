@@ -26,6 +26,10 @@ export function showWeatherData(weatherData) {
 		let item = weatherData.consolidated_weather[i];
 		let imageUrl = `https://www.metaweather.com/static/img/weather/${item.weather_state_abbr}.svg`;
 
+		if (i === 0) {
+			setFavicon(item.weather_state_abbr);
+		}
+
 		cards += `<div class="card-container__card appear-card-${[i + 1]}">
 					<h2>${getDayName(item.applicable_date)}</h2>
 					<img
@@ -45,4 +49,17 @@ export function showWeatherData(weatherData) {
 	}
 
 	cardContainer.innerHTML = cards;
+}
+
+function setFavicon(ico) {
+	let favicon = document.querySelector("link[rel='icon']");
+	let icoUrl = `https://www.metaweather.com/static/img/weather/ico/${ico}.ico`;
+
+	if (!favicon) {
+		favicon = document.createElement('link');
+		favicon.rel = 'icon';
+		document.getElementsByTagName('head')[0].appendChild(favicon);
+	}
+
+	favicon.href = icoUrl;
 }
