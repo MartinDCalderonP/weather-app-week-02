@@ -2,6 +2,7 @@
 
 import './suggestions.js';
 import './search.js';
+import './eventListeners.js';
 import { mainTitle, cardContainer } from './commonVariables.js';
 import { getWeatherData, getDayName } from './helperFunctions.js';
 

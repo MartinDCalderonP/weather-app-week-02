@@ -1,3 +1,9 @@
+import {
+	searchInput,
+	searchInputDiv,
+	searchButton,
+} from './commonVariables.js';
+
 searchInput.addEventListener('focusin', inputFocusIn);
 searchInput.addEventListener('focusout', inputFocusOut);
 
