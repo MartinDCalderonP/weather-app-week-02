@@ -1,5 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
 
+:root {
+	--lightblue: #00aae4;
+}
 * {
 	margin: 0;
 	padding: 0;
@@ -22,13 +25,7 @@ header {
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
-	border: 1px solid #00aae4;
-	height: 30px;
-	padding: 10px 0px 10px 20px;
-	border-radius: 999px;
-	width: 75vw;
-	margin: 0 auto;
-	transition: all 0.25s linear;
+	border: 1px solid var(--lightblue);
 }
 
 .form__input-div__search-input:hover {
@@ -51,7 +48,7 @@ header {
 .form__input-div__search-button {
 	cursor: pointer;
 	background-color: transparent;
-	color: #00aae4;
+	color: var(--lightblue);
 	border: none;
 	border-top-right-radius: 999px;
 	border-bottom-right-radius: 999px;
@@ -66,10 +63,7 @@ header {
 .form__input-div__suggestions-list {
 	display: none;
 	list-style-type: none;
-	margin-bottom: 20px;
-	border: 1px solid black;
-	border-radius: 5px;
-	padding: 5px;
+	border: 1px solid var(--lightblue);
 }
 
 main {
@@ -96,7 +90,7 @@ main {
 	height: 100%;
 	background-color: #f9f9f9;
 	color: darkblue;
-	border: 1px solid #00aae4;
+	border: 1px solid var(--lightblue);
 	border-radius: 5px;
 	padding: 5px 10px;
 	box-sizing: border-box;
