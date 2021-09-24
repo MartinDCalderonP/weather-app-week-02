@@ -71,7 +71,7 @@ header {
 	background-color: #ffffff;
 	border: 1px solid var(--lightblue);
 	border-radius: 0px 0px 25px 25px;
-	padding: 10px 0px;
+	padding: 10px 0px 25px;
 	position: absolute;
 	z-index: 100;
 	width: 75vw;
@@ -89,6 +89,11 @@ header {
 	background-color: transparent;
 	color: #404040;
 	padding: 10px 0px 10px 40px;
+	cursor: pointer;
+}
+
+.form__input-div__suggestions-list > li:hover {
+	background-color: #eeeeee;
 }
 
 main {
