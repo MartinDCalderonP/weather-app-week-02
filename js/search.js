@@ -12,8 +12,10 @@ import {
 
 searchButton.addEventListener('click', throttle(searchLocation, 500));
 
-function searchLocation(e) {
-	e.preventDefault();
+export function searchLocation(e) {
+	if (e) {
+		e.preventDefault();
+	}
 	pauseSearchButton();
 	getLocationsData(showSearchResults, getWeatherData);
 }
