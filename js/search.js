@@ -4,26 +4,18 @@ import {
 	searchInput,
 	searchButton,
 } from './commonVariables.js';
-import { getWeatherData, throttle } from './helperFunctions.js';
+import {
+	getWeatherData,
+	getLocationsData,
+	throttle,
+} from './helperFunctions.js';
 
 searchButton.addEventListener('click', throttle(searchLocation, 500));
 
 function searchLocation(e) {
 	e.preventDefault();
 	pauseSearchButton();
-
-	let queryUrl = `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=`;
-
-	if (searchInput.value.length > 0) {
-		fetch(queryUrl + searchInput.value)
-			.then((data) => data.json())
-			.then(showSearchResults)
-			.catch((err) => {
-				console.log(err);
-			});
-	} else {
-		getWeatherData();
-	}
+	getLocationsData(showSearchResults, getWeatherData);
 }
 
 function showSearchResults(searchResults) {

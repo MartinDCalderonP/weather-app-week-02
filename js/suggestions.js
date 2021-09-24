@@ -1,21 +1,10 @@
 import { searchInput, suggestionsList } from './commonVariables.js';
-import { debounce } from './helperFunctions.js';
+import { getLocationsData, debounce } from './helperFunctions.js';
 
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
 
 function getSuggestions() {
-	let queryUrl = `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=`;
-
-	if (searchInput.value.length > 0) {
-		fetch(queryUrl + searchInput.value)
-			.then((data) => data.json())
-			.then(showSuggestionsList)
-			.catch((err) => {
-				console.log(err);
-			});
-	} else {
-		hideSuggestionsList();
-	}
+	getLocationsData(showSuggestionsList, hideSuggestionsList);
 }
 
 function showSuggestionsList(suggestions) {
