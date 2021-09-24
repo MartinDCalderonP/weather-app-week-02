@@ -120,6 +120,7 @@ main {
 	height: 100%;
 	background-color: #f9f9f9;
 	color: darkblue;
+	margin: 5px 0px;
 	border: 1px solid var(--lightblue);
 	border-radius: 5px;
 	padding: 5px 10px;
@@ -135,6 +136,10 @@ main {
 .card-container__card:hover {
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.5);
 	border-color: darkblue;
+}
+
+.card-container * {
+	background-color: transparent;
 }
 
 .card-container__card > * {
@@ -173,5 +178,44 @@ main {
 	}
 	100% {
 		transform: scale(1);
+	}
+}
+
+@media (max-width: 600px) {
+	.form {
+		margin: 20px;
+		width: 100vw;
+	}
+
+	.card-container {
+		flex-direction: column;
+	}
+
+	.card-container__card {
+		flex-direction: row;
+		justify-content: space-between;
+		width: 90%;
+	}
+
+	.card-container__card > * {
+		width: 22%;
+	}
+
+	.card-container__card > h2 {
+		width: 30%;
+	}
+
+	.card-container__card__weather-icon {
+		margin: 10px 10px;
+	}
+}
+
+@media (min-width: 600px) and (max-width: 900px) {
+	.card-container {
+		flex-wrap: wrap;
+	}
+
+	.card-container__card {
+		width: 200px;
 	}
 }
