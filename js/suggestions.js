@@ -3,9 +3,11 @@ import {
 	searchInputDiv,
 	suggestionsList,
 } from './commonVariables.js';
+import { searchLocation } from './search.js';
 import { getLocationsData, debounce } from './helperFunctions.js';
 
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
+suggestionsList.addEventListener('click', searchBySuggested);
 
 function getSuggestions() {
 	getLocationsData(showSuggestionsList, hideSuggestionsList());
@@ -32,4 +34,12 @@ function showSuggestionsList(suggestions) {
 function hideSuggestionsList() {
 	suggestionsList.style.display = 'none';
 	searchInputDiv.style.borderRadius = '25px';
+}
+
+function searchBySuggested(e) {
+	if (e.target.matches('li')) {
+		searchInput.value = e.target.textContent;
+		searchLocation();
+		hideSuggestionsList();
+	}
 }
