@@ -30,7 +30,7 @@ header {
 	border-radius: 25px;
 	padding-left: 20px;
 	box-sizing: border-box;
-	transition: all 0.3s linear;
+	transition: box-shadow 0.3s linear, border-color 0.3s linear;
 }
 
 .form__input-div__search-input:hover {
