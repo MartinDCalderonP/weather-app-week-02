@@ -4,9 +4,12 @@ import {
 	weatherDataUrl,
 	searchInWeatherDataUrl,
 	defaultId,
+	cardContainer,
+	mainTitle,
 } from './commonVariables.js';
 
 export function getWeatherData(receivedId) {
+	showSpinner();
 	localStorage.setItem('lastId', receivedId);
 
 	let locationId = receivedId || defaultId;
@@ -70,4 +73,16 @@ export function throttle(fn, delay) {
 		last = now;
 		return fn(...args);
 	};
+}
+
+function showSpinner() {
+	let spinner = `<img
+						id="spinner"
+						class="card-container__spinner"
+						src="./img/spinner.gif"
+						alt="Loading..."
+					/>`;
+
+	mainTitle.innerHTML = '';
+	cardContainer.innerHTML = spinner;
 }

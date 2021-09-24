@@ -19,7 +19,7 @@ function getLastOrDefaultData() {
 }
 
 export function showWeatherData(weatherData) {
-	mainTitle.innerHTML = `${weatherData.title}`;
+	mainTitle.innerHTML = weatherData.title;
 	let cards = '';
 
 	for (let i = 0; i < weatherData.consolidated_weather.length - 1; i++) {

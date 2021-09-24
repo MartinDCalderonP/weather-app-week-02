@@ -115,6 +115,11 @@ main {
 	align-items: center;
 }
 
+.card-container__spinner {
+	margin-top: 50px;
+	width: 100px;
+}
+
 .card-container__card {
 	width: 18%;
 	height: 100%;
