@@ -16,23 +16,18 @@
 	<body>
 		<header>
 			<form class="form" autocomplete="off">
-				<div class="form__input-div">
-					<div id="searchInputDiv" class="form__input-div__search-input">
-						<input
-							type="text"
-							id="searchInput"
-							name="search"
-							placeholder="Search"
-						/>
-						<button id="searchButton" class="form__input-div__search-button">
-							<i class="fas fa-search"></i>
-						</button>
-					</div>
-					<ul
-						id="suggestionsList"
-						class="form__input-div__suggestions-list"
-					></ul>
+				<div id="searchInputDiv" class="form__search-input-div">
+					<input
+						type="text"
+						id="searchInput"
+						name="search"
+						placeholder="Search"
+					/>
+					<button id="searchButton" class="form__search-button">
+						<i class="fas fa-search"></i>
+					</button>
 				</div>
+				<ul id="suggestionsList" class="form__suggestions-list"></ul>
 			</form>
 		</header>
 		<main>

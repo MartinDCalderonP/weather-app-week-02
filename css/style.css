@@ -16,12 +16,12 @@ header {
 	justify-content: center;
 }
 
-.form__input-div {
+.form {
 	margin: 20px 0px;
 	width: 75vw;
 }
 
-.form__input-div__search-input {
+.form__search-input-div {
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
@@ -33,16 +33,16 @@ header {
 	transition: box-shadow 0.3s linear, border-color 0.3s linear;
 }
 
-.form__input-div__search-input:hover {
+.form__search-input-div:hover {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 	border-color: darkblue;
 }
 
-.form__input-div__search-input:hover i {
+.form__search-input-div:hover i {
 	color: darkblue;
 }
 
-.form__input-div__search-input > input {
+.form__search-input-div > input {
 	flex: 1;
 	padding: 10px 20px;
 	font-size: 1rem;
@@ -50,7 +50,7 @@ header {
 	background-color: transparent;
 }
 
-.form__input-div__search-button {
+.form__search-button {
 	cursor: pointer;
 	background-color: transparent;
 	color: var(--lightblue);
@@ -59,12 +59,12 @@ header {
 	padding: 15px 30px;
 }
 
-.form__input-div__search-button > i {
+.form__search-button > i {
 	background-color: transparent;
 	transition: all 0.3s linear;
 }
 
-.form__input-div__suggestions-list {
+.form__suggestions-list {
 	display: none;
 	list-style-type: none;
 	margin-top: -1px;
@@ -79,12 +79,12 @@ header {
 	transition: all 0.3s linear;
 }
 
-.form__input-div__suggestions-list:hover {
+.form__suggestions-list:hover {
 	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
 	border-color: darkblue;
 }
 
-.form__input-div__suggestions-list > li {
+.form__suggestions-list > li {
 	font-size: 1rem;
 	background-color: transparent;
 	color: #404040;
@@ -92,7 +92,7 @@ header {
 	cursor: pointer;
 }
 
-.form__input-div__suggestions-list > li:hover {
+.form__suggestions-list > li:hover {
 	background-color: #eeeeee;
 }
 
