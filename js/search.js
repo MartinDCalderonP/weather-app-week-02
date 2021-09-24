@@ -14,7 +14,7 @@ function searchLocation(e) {
 
 	let queryUrl = `https://api.allorigins.win/raw?url=https://www.metaweather.com/api/location/search/?query=`;
 
-	if (searchInput.value) {
+	if (searchInput.value.length > 0) {
 		fetch(queryUrl + searchInput.value)
 			.then((data) => data.json())
 			.then(showSearchResults)
