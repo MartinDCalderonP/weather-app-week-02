@@ -9,14 +9,13 @@ getWeatherData();
 
 export function showWeatherData(weatherData) {
 	mainTitle.innerHTML = `5 Day Weather - ${weatherData.title}`;
-
-	let cards = '';
+	cardContainer.innerHTML = '';
 
 	for (let i = 0; i < weatherData.consolidated_weather.length - 1; i++) {
 		let item = weatherData.consolidated_weather[i];
 		let imageUrl = `https://www.metaweather.com/static/img/weather/${item.weather_state_abbr}.svg`;
 
-		cards += `<div class="card-container__card">
+		cardContainer.innerHTML += `<div class="card-container__card">
 					<h2>${getDayName(item.applicable_date)}</h2>
 					<img
 						class="card-container__card__weather-icon"
@@ -33,6 +32,4 @@ export function showWeatherData(weatherData) {
 					</div>
 				</div>`;
 	}
-
-	cardContainer.innerHTML = cards;
 }
