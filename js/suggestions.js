@@ -1,8 +1,6 @@
 import { searchInput, suggestionsList } from './commonVariables.js';
 import { debounce } from './helperFunctions.js';
 
-let suggestions;
-
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
 
 function getSuggestions() {
@@ -11,10 +9,7 @@ function getSuggestions() {
 	if (searchInput.value.length > 0) {
 		fetch(queryUrl + searchInput.value)
 			.then((data) => data.json())
-			.then((data) => {
-				suggestions = data;
-				showSuggestionsList();
-			})
+			.then(showSuggestionsList)
 			.catch((err) => {
 				console.log(err);
 			});
@@ -23,7 +18,7 @@ function getSuggestions() {
 	}
 }
 
-function showSuggestionsList() {
+function showSuggestionsList(suggestions) {
 	if (suggestions.length > 0) {
 		suggestionsList.innerHTML = '';
 		suggestionsList.style.display = 'block';
