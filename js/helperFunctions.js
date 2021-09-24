@@ -7,6 +7,8 @@ import {
 } from './commonVariables.js';
 
 export function getWeatherData(receivedId) {
+	localStorage.setItem('lastId', receivedId);
+
 	let locationId = receivedId || defaultId;
 	let fetchUrl = weatherDataUrl + locationId;
 

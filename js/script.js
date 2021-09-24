@@ -5,7 +5,17 @@ import './search.js';
 import { mainTitle, cardContainer } from './commonVariables.js';
 import { getWeatherData, getDayName } from './helperFunctions.js';
 
-getWeatherData();
+getLastOrDefaultData();
+
+function getLastOrDefaultData() {
+	let lastId = localStorage.getItem('lastId');
+
+	if (lastId > 0) {
+		getWeatherData(lastId);
+	} else {
+		getWeatherData();
+	}
+}
 
 export function showWeatherData(weatherData) {
 	mainTitle.innerHTML = `5 Day Weather - ${weatherData.title}`;
