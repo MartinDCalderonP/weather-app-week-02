@@ -1,5 +1,6 @@
 export const mainTitle = document.getElementById('mainTitle');
 export const cardContainer = document.getElementById('cardContainer');
+export const searchInputDiv = document.getElementById('searchInputDiv');
 export const searchInput = document.getElementById('searchInput');
 export const suggestionsList = document.getElementById('suggestionsList');
 export const searchButton = document.getElementById('searchButton');
