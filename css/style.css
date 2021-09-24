@@ -38,7 +38,7 @@ header {
 	border-color: darkblue;
 }
 
-.form__search-input-div:hover i {
+.form__search-input-div:hover > .form__search-button {
 	color: darkblue;
 }
 
