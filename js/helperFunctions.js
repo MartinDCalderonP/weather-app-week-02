@@ -1,14 +1,14 @@
 import { showWeatherData } from './script.js';
 import {
 	searchInput,
-	weatherAPIUrl,
-	searchInWeatherAPIUrl,
+	weatherDataUrl,
+	searchInWeatherDataUrl,
 	defaultId,
 } from './commonVariables.js';
 
 export function getWeatherData(receivedId) {
 	let locationId = receivedId || defaultId;
-	let fetchUrl = weatherAPIUrl + locationId;
+	let fetchUrl = weatherDataUrl + locationId;
 
 	fetch(fetchUrl)
 		.then((data) => data.json())
@@ -20,7 +20,7 @@ export function getWeatherData(receivedId) {
 
 export function getLocationsData(successPromiseFunction, emptyStringFunction) {
 	if (searchInput.value.length > 0) {
-		let fetchUrl = weatherAPIUrl + searchInWeatherAPIUrl + searchInput.value;
+		let fetchUrl = weatherDataUrl + searchInWeatherDataUrl + searchInput.value;
 
 		fetch(fetchUrl)
 			.then((data) => data.json())
