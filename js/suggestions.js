@@ -4,7 +4,7 @@ import { getLocationsData, debounce } from './helperFunctions.js';
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
 
 function getSuggestions() {
-	getLocationsData(showSuggestionsList, hideSuggestionsList);
+	getLocationsData(showSuggestionsList, hideSuggestionsList());
 }
 
 function showSuggestionsList(suggestions) {
