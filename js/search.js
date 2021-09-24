@@ -20,6 +20,12 @@ export function searchLocation(e) {
 	getLocationsData(showSearchResults, getWeatherData);
 }
 
+function pauseSearchButton() {
+	searchButton.disabled = true;
+
+	setTimeout(() => (searchButton.disabled = false), 5000);
+}
+
 function showSearchResults(searchResults) {
 	if (searchResults[0]?.woeid) {
 		getWeatherData(searchResults[0].woeid);
@@ -32,10 +38,4 @@ function searchNotFound() {
 	mainTitle.innerHTML = `Weather data for "${searchInput.value}" not found. <br> Search again please.`;
 	mainTitle.style.color = 'red';
 	cardContainer.innerHTML = '';
-}
-
-function pauseSearchButton() {
-	searchButton.disabled = true;
-
-	setTimeout(() => (searchButton.disabled = false), 5000);
 }
