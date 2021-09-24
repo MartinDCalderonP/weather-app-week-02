@@ -8,6 +8,7 @@ import { getLocationsData, debounce } from './helperFunctions.js';
 
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
 suggestionsList.addEventListener('click', searchBySuggested);
+document.addEventListener('click', clickOutsideSuggestionsList);
 
 function getSuggestions() {
 	getLocationsData(showSuggestionsList, hideSuggestionsList());
@@ -40,6 +41,12 @@ function searchBySuggested(e) {
 	if (e.target.matches('li')) {
 		searchInput.value = e.target.textContent;
 		searchLocation();
+		hideSuggestionsList();
+	}
+}
+
+function clickOutsideSuggestionsList(e) {
+	if (!e.target.matches('li') && !e.target.matches('ul')) {
 		hideSuggestionsList();
 	}
 }
