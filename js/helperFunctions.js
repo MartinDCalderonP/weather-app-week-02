@@ -36,9 +36,9 @@ export function getLocationsData(successPromiseFunction, emptyStringFunction) {
 export function getDayName(date) {
 	let numberDate = new Date(date);
 
-	const options = { weekday: 'long' };
+	const options = { weekday: 'long', timeZone: 'UTC' };
 
-	return numberDate.toLocaleDateString('en-us', options);
+	return numberDate.toLocaleDateString('en-US', options);
 }
 
 export function debounce(fn, delay) {
