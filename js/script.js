@@ -2,10 +2,8 @@
 
 import './suggestions.js';
 import './search.js';
-import { getWeatherData, getDayName } from './helpers.js';
-
-export const mainTitle = document.getElementById('mainTitle');
-export const cardContainer = document.getElementById('cardContainer');
+import { mainTitle, cardContainer } from './commonVariables.js';
+import { getWeatherData, getDayName } from './helperFunctions.js';
 
 getWeatherData();
 

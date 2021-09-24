@@ -1,8 +1,10 @@
-import { mainTitle, cardContainer } from './script.js';
-import { getWeatherData, throttle } from './helpers.js';
-
-const searchInput = document.getElementById('searchInput');
-const searchButton = document.getElementById('searchButton');
+import {
+	mainTitle,
+	cardContainer,
+	searchInput,
+	searchButton,
+} from './commonVariables.js';
+import { getWeatherData, throttle } from './helperFunctions.js';
 
 searchButton.addEventListener('click', throttle(searchLocation, 500));
 

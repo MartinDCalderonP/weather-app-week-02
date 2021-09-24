@@ -1,7 +1,6 @@
-import { debounce } from './helpers.js';
+import { searchInput, suggestionsList } from './commonVariables.js';
+import { debounce } from './helperFunctions.js';
 
-const searchInput = document.getElementById('searchInput');
-const suggestionsList = document.getElementById('suggestionsList');
 let suggestions;
 
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
