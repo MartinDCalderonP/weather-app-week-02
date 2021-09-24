@@ -146,3 +146,32 @@ main {
 	background-color: transparent;
 	width: 50%;
 }
+
+.appear-card-1 {
+	animation: appear-card 0.4s ease-in;
+}
+
+.appear-card-2 {
+	animation: appear-card 0.6s ease-in;
+}
+
+.appear-card-3 {
+	animation: appear-card 0.8s ease-in;
+}
+
+.appear-card-4 {
+	animation: appear-card 1s ease-in;
+}
+
+.appear-card-5 {
+	animation: appear-card 1.2s ease-in;
+}
+
+@keyframes appear-card {
+	0% {
+		transform: scale(0);
+	}
+	100% {
+		transform: scale(1);
+	}
+}
