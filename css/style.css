@@ -3,6 +3,7 @@
 :root {
 	--lightblue: #00aae4;
 }
+
 * {
 	margin: 0;
 	padding: 0;
@@ -15,17 +16,20 @@ header {
 	justify-content: center;
 }
 
-.form {
-	margin: 20px;
-	display: flex;
-	align-items: flex-start;
+.form__input-div {
+	margin: 20px 0px;
+	width: 75vw;
 }
 
 .form__input-div__search-input {
 	display: flex;
 	align-items: center;
 	background-color: #ffffff;
+	min-height: 52px;
 	border: 1px solid var(--lightblue);
+	border-radius: 25px;
+	padding-left: 20px;
+	box-sizing: border-box;
 	transition: all 0.3s linear;
 }
 
@@ -51,8 +55,7 @@ header {
 	background-color: transparent;
 	color: var(--lightblue);
 	border: none;
-	border-top-right-radius: 999px;
-	border-bottom-right-radius: 999px;
+	border-radius: 0px 25px 25px 0px;
 	padding: 15px 30px;
 }
 
@@ -64,8 +67,28 @@ header {
 .form__input-div__suggestions-list {
 	display: none;
 	list-style-type: none;
+	margin-top: -1px;
+	background-color: #ffffff;
 	border: 1px solid var(--lightblue);
+	border-radius: 0px 0px 25px 25px;
+	padding: 10px 0px;
+	position: absolute;
+	z-index: 100;
+	width: 75vw;
+	box-sizing: border-box;
 	transition: all 0.3s linear;
+}
+
+.form__input-div__suggestions-list:hover {
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+	border-color: darkblue;
+}
+
+.form__input-div__suggestions-list > li {
+	font-size: 1rem;
+	background-color: transparent;
+	color: #404040;
+	padding: 10px 0px 10px 40px;
 }
 
 main {
