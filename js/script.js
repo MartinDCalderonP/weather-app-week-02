@@ -4,7 +4,7 @@ import './suggestions.js';
 import './search.js';
 import './eventListeners.js';
 import { mainTitle, cardContainer } from './commonVariables.js';
-import { getWeatherData, getDayName } from './helperFunctions.js';
+import { getWeatherData, getDayName, setFavicon } from './helperFunctions.js';
 
 getLastOrDefaultData();
 
@@ -49,17 +49,4 @@ export function showWeatherData(weatherData) {
 	}
 
 	cardContainer.innerHTML = cards;
-}
-
-function setFavicon(ico) {
-	let favicon = document.querySelector("link[rel='icon']");
-	let icoUrl = `https://www.metaweather.com/static/img/weather/ico/${ico}.ico`;
-
-	if (!favicon) {
-		favicon = document.createElement('link');
-		favicon.rel = 'icon';
-		document.getElementsByTagName('head')[0].appendChild(favicon);
-	}
-
-	favicon.href = icoUrl;
 }

@@ -67,3 +67,28 @@ export function throttle(fn, delay) {
 		return fn(...args);
 	};
 }
+
+export function showSpinner() {
+	let spinner = `<img
+						id="spinner"
+						class="card-container__spinner"
+						src="./img/spinner.gif"
+						alt="Loading..."
+					/>`;
+
+	mainTitle.innerHTML = '';
+	cardContainer.innerHTML = spinner;
+}
+
+export function setFavicon(ico) {
+	let favicon = document.querySelector("link[rel='icon']");
+	let icoUrl = `https://www.metaweather.com/static/img/weather/ico/${ico}.ico`;
+
+	if (!favicon) {
+		favicon = document.createElement('link');
+		favicon.rel = 'icon';
+		document.getElementsByTagName('head')[0].appendChild(favicon);
+	}
+
+	favicon.href = icoUrl;
+}
