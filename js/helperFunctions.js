@@ -34,7 +34,9 @@ export function getLocationsData(successPromiseFunction, emptyStringFunction) {
 				alert(err);
 			});
 	} else {
-		emptyStringFunction;
+		if (emptyStringFunction) {
+			emptyStringFunction;
+		}
 	}
 }
 

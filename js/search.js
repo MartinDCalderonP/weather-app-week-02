@@ -18,7 +18,7 @@ export function searchLocation(e) {
 	if (e) {
 		e.preventDefault();
 	}
-	getLocationsData(showSearchResults, getWeatherData);
+	getLocationsData(showSearchResults);
 }
 
 function showSearchResults(searchResults) {
