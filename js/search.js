@@ -9,7 +9,6 @@ import {
 	getWeatherData,
 	getLocationsData,
 	throttle,
-	showSpinner,
 } from './helperFunctions.js';
 
 form.addEventListener('submit', (e) => e.preventDefault());
