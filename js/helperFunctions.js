@@ -16,7 +16,7 @@ export function getWeatherData(receivedId) {
 		.then((data) => data.json())
 		.then(showWeatherData)
 		.catch((err) => {
-			alert(err);
+			console.log(err);
 		});
 }
 
@@ -27,7 +27,7 @@ export function getLocationsData(successPromiseFunction) {
 		.then((data) => data.json())
 		.then(successPromiseFunction)
 		.catch((err) => {
-			alert(err);
+			console.log(err);
 		});
 }
 
