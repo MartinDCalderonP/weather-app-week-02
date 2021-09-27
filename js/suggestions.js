@@ -7,14 +7,23 @@ import { searchLocation } from './search.js';
 import { getLocationsData, debounce } from './helperFunctions.js';
 
 searchInput.addEventListener('keyup', debounce(getSuggestions, 500));
+searchInput.addEventListener('keydown', keyNavigation);
 suggestionsList.addEventListener('click', searchBySuggested);
 document.addEventListener('click', clickOutsideSuggestionsList);
 
-function getSuggestions() {
-	if (searchInput.value) {
-		getLocationsData(showSuggestionsList);
-	} else {
+let suggestionsItems = suggestionsList.children;
+let current = 0;
+
+function getSuggestions(e) {
+	if (!searchInput.value) {
 		hideSuggestionsList();
+		return;
+	}
+
+	let key = e.key.charCodeAt();
+
+	if (e.key === 'Backspace' || (key >= 97 && key <= 122) || key == 241) {
+		getLocationsData(showSuggestionsList);
 	}
 }
 
@@ -31,6 +40,9 @@ function showSuggestionsList(suggestions) {
 				suggestionsList.innerHTML += `<li>${item.title}</li>`;
 			}
 		}
+
+		suggestionsItems[0].style.backgroundColor = '#eeeeee';
+		current = 0;
 	} else {
 		hideSuggestionsList();
 	}
@@ -39,6 +51,32 @@ function showSuggestionsList(suggestions) {
 function hideSuggestionsList() {
 	suggestionsList.style.display = 'none';
 	searchInputDiv.style.borderRadius = '25px';
+}
+
+function keyNavigation(e) {
+	if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+		suggestionsItems[current].style.backgroundColor = 'transparent';
+
+		if (e.key === 'ArrowDown') {
+			if (current < suggestionsItems.length - 1) {
+				++current;
+			} else {
+				current = suggestionsItems.length - 1;
+			}
+		}
+
+		if (e.key === 'ArrowUp') {
+			if (current > 0) {
+				--current;
+			} else {
+				current = 0;
+			}
+		}
+
+		searchInput.value = suggestionsItems[current].textContent;
+
+		suggestionsItems[current].style.backgroundColor = '#eeeeee';
+	}
 }
 
 function searchBySuggested(e) {
