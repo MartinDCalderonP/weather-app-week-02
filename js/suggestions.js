@@ -20,9 +20,9 @@ function getSuggestions(e) {
 		return;
 	}
 
-	let regex = /^[a-zA-Z]+$/;
+	let key = e.key.charCodeAt();
 
-	if (searchInput.value.match(regex)) {
+	if (e.key === 'Backspace' || (key >= 97 && key <= 122) || key == 241) {
 		getLocationsData(showSuggestionsList);
 	}
 }
