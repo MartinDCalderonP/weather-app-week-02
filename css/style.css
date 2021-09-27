@@ -203,11 +203,12 @@ main {
 	}
 
 	.card-container__card > * {
-		width: 22%;
+		width: 15%;
 	}
 
 	.card-container__card > h2 {
 		width: 30%;
+		font-size: 1.2rem;
 	}
 
 	.card-container__card__weather-icon {
