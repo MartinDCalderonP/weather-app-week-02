@@ -33,18 +33,22 @@ function showSuggestionsList(suggestions) {
 		suggestionsList.style.display = 'block';
 		searchInputDiv.style.borderRadius = '25px 25px 0px 0px';
 
-		for (let i = 0; i < 5; i++) {
-			let item = suggestions[i];
-
-			if (item) {
-				suggestionsList.innerHTML += `<li>${item.title}</li>`;
-			}
-		}
+		addItemsToSuggestionsList(suggestions);
 
 		suggestionsItems[0].style.backgroundColor = '#eeeeee';
 		current = 0;
 	} else {
 		hideSuggestionsList();
+	}
+}
+
+function addItemsToSuggestionsList(suggestions) {
+	for (let i = 0; i < 5; i++) {
+		let item = suggestions[i];
+
+		if (item) {
+			suggestionsList.innerHTML += `<li>${item.title}</li>`;
+		}
 	}
 }
 
@@ -54,7 +58,7 @@ function hideSuggestionsList() {
 }
 
 function keyNavigation(e) {
-	if (suggestionsItems.length > 0 && searchInput.value) {
+	if (suggestionsItems.length > 1 && searchInput.value) {
 		if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
 			downAndUpArrows(e.key);
 		}
@@ -64,16 +68,12 @@ function keyNavigation(e) {
 function downAndUpArrows(key) {
 	suggestionsItems[current].style.backgroundColor = 'transparent';
 
-	if (key === 'ArrowDown') {
-		if (current < suggestionsItems.length - 1) {
-			++current;
-		}
+	if (key === 'ArrowDown' && current < 4) {
+		++current;
 	}
 
-	if (key === 'ArrowUp') {
-		if (current > 0) {
-			--current;
-		}
+	if (key === 'ArrowUp' && current > 0) {
+		--current;
 	}
 
 	searchInput.value = suggestionsItems[current].textContent;
