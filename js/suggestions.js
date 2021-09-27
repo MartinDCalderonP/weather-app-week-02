@@ -54,29 +54,31 @@ function hideSuggestionsList() {
 }
 
 function keyNavigation(e) {
-	if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
-		suggestionsItems[current].style.backgroundColor = 'transparent';
-
-		if (e.key === 'ArrowDown') {
-			if (current < suggestionsItems.length - 1) {
-				++current;
-			} else {
-				current = suggestionsItems.length - 1;
-			}
+	if (suggestionsItems.length > 0 && searchInput.value) {
+		if (e.key === 'ArrowDown' || e.key === 'ArrowUp') {
+			downAndUpArrows(e.key);
 		}
-
-		if (e.key === 'ArrowUp') {
-			if (current > 0) {
-				--current;
-			} else {
-				current = 0;
-			}
-		}
-
-		searchInput.value = suggestionsItems[current].textContent;
-
-		suggestionsItems[current].style.backgroundColor = '#eeeeee';
 	}
+}
+
+function downAndUpArrows(key) {
+	suggestionsItems[current].style.backgroundColor = 'transparent';
+
+	if (key === 'ArrowDown') {
+		if (current < suggestionsItems.length - 1) {
+			++current;
+		}
+	}
+
+	if (key === 'ArrowUp') {
+		if (current > 0) {
+			--current;
+		}
+	}
+
+	searchInput.value = suggestionsItems[current].textContent;
+
+	suggestionsItems[current].style.backgroundColor = '#eeeeee';
 }
 
 function searchBySuggested(e) {
