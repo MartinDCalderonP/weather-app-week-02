@@ -16,7 +16,7 @@ export function getWeatherData(receivedId) {
 		.then((data) => data.json())
 		.then(showWeatherData)
 		.catch((err) => {
-			console.log(err);
+			alert('El servidor devolvió un error: ', err);
 		});
 }
 
@@ -27,7 +27,7 @@ export function getLocationsData(successPromiseFunction) {
 		.then((data) => data.json())
 		.then(successPromiseFunction)
 		.catch((err) => {
-			console.log(err);
+			alert('El servidor devolvió un error: ', err);
 		});
 }
 
