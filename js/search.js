@@ -1,4 +1,5 @@
 import {
+	form,
 	mainTitle,
 	cardContainer,
 	searchInput,
@@ -10,20 +11,14 @@ import {
 	throttle,
 } from './helperFunctions.js';
 
+form.addEventListener('submit', (e) => e.preventDefault());
 searchButton.addEventListener('click', throttle(searchLocation, 500));
 
 export function searchLocation(e) {
 	if (e) {
 		e.preventDefault();
 	}
-	pauseSearchButton();
 	getLocationsData(showSearchResults, getWeatherData);
-}
-
-function pauseSearchButton() {
-	searchButton.disabled = true;
-
-	setTimeout(() => (searchButton.disabled = false), 5000);
 }
 
 function showSearchResults(searchResults) {

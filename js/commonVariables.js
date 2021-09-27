@@ -1,3 +1,4 @@
+export const form = document.getElementById('form');
 export const mainTitle = document.getElementById('mainTitle');
 export const cardContainer = document.getElementById('cardContainer');
 export const searchInputDiv = document.getElementById('searchInputDiv');
