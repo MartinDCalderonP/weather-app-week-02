@@ -18,8 +18,11 @@ export function searchLocation(e) {
 	if (e) {
 		e.preventDefault();
 	}
-	showSpinner();
-	getLocationsData(showSearchResults);
+
+	if (searchInput.value) {
+		showSpinner();
+		getLocationsData(showSearchResults);
+	}
 }
 
 function showSearchResults(searchResults) {

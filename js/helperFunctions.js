@@ -20,21 +20,15 @@ export function getWeatherData(receivedId) {
 		});
 }
 
-export function getLocationsData(successPromiseFunction, emptyStringFunction) {
-	if (searchInput.value.length > 0) {
-		let fetchUrl = weatherDataUrl + searchInWeatherDataUrl + searchInput.value;
+export function getLocationsData(successPromiseFunction) {
+	let fetchUrl = weatherDataUrl + searchInWeatherDataUrl + searchInput.value;
 
-		fetch(fetchUrl)
-			.then((data) => data.json())
-			.then(successPromiseFunction)
-			.catch((err) => {
-				alert(err);
-			});
-	} else {
-		if (emptyStringFunction) {
-			emptyStringFunction;
-		}
-	}
+	fetch(fetchUrl)
+		.then((data) => data.json())
+		.then(successPromiseFunction)
+		.catch((err) => {
+			alert(err);
+		});
 }
 
 export function getDayName(date) {

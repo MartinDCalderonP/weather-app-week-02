@@ -11,7 +11,11 @@ suggestionsList.addEventListener('click', searchBySuggested);
 document.addEventListener('click', clickOutsideSuggestionsList);
 
 function getSuggestions() {
-	getLocationsData(showSuggestionsList, hideSuggestionsList());
+	if (searchInput.value) {
+		getLocationsData(showSuggestionsList);
+	} else {
+		hideSuggestionsList();
+	}
 }
 
 function showSuggestionsList(suggestions) {
