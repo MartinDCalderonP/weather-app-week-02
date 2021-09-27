@@ -9,6 +9,7 @@ import {
 	getWeatherData,
 	getLocationsData,
 	throttle,
+	showSpinner,
 } from './helperFunctions.js';
 
 form.addEventListener('submit', (e) => e.preventDefault());
@@ -18,6 +19,7 @@ export function searchLocation(e) {
 	if (e) {
 		e.preventDefault();
 	}
+	showSpinner();
 	getLocationsData(showSearchResults);
 }
 
@@ -33,4 +35,16 @@ function searchNotFound() {
 	mainTitle.innerHTML = `Weather data for "${searchInput.value}" not found. <br> Search again please.`;
 	mainTitle.style.color = 'red';
 	cardContainer.innerHTML = '';
+}
+
+function showSpinner() {
+	let spinner = `<img
+						id="spinner"
+						class="card-container__spinner"
+						src="./img/spinner.gif"
+						alt="Loading..."
+					/>`;
+
+	mainTitle.innerHTML = '';
+	cardContainer.innerHTML = spinner;
 }
