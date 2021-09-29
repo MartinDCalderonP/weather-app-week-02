@@ -30,10 +30,10 @@ export function showWeatherData(weatherData) {
 			setFavicon(item.weather_state_abbr);
 		}
 
-		cards += `<div class="card-container__card appear-card-${[i + 1]}">
+		cards += `<div class="cards-container__card appear-card-${[i + 1]}">
 					<h2>${getDayName(item.applicable_date)}</h2>
 					<img
-						class="card-container__card__weather-icon"
+						class="cards-container__card__weather-icon"
 						src="${imageUrl}"
 						alt="${item.weather_state_name}"
 					/>

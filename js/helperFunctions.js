@@ -71,7 +71,7 @@ export function throttle(fn, delay) {
 export function showSpinner() {
 	let spinner = `<img
 						id="spinner"
-						class="card-container__spinner"
+						class="cards-container__spinner"
 						src="./img/spinner.gif"
 						alt="Loading..."
 					/>`;
