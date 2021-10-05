@@ -68,7 +68,7 @@ function keyNavigation(e) {
 function downAndUpArrows(key) {
 	suggestionsItems[current].style.backgroundColor = 'transparent';
 
-	if (key === 'ArrowDown' && current < 4) {
+	if (key === 'ArrowDown' && current < suggestionsItems.length - 1) {
 		++current;
 	}
 
